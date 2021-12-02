@@ -6,13 +6,14 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:33:03 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/02 00:13:35 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/02 19:09:31 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+# include <stdbool.h>
 # include "../Libft/libft.h"
 # include "bettermlx_struct.h"
 # include "bettermlx_func.h"
@@ -29,6 +30,7 @@
 # define true 1
 # define false 0
 # define MOOVE_SPEED 50
+# define BUFFER_SIZE 1
 
 typedef union u_argb
 {
@@ -59,6 +61,15 @@ typedef	struct s_player
 	t_keybool	key;
 }				t_player;
 
+typedef	struct s_map
+{
+	t_file *my_file;
+	size_t	map_width;
+	size_t	map_height;
+	char	**map;
+	char	*line;
+	bool	check_if_ok;
+}				t_map;
 
 typedef struct	s_game
 {
@@ -67,6 +78,7 @@ typedef struct	s_game
 	t_image		*img_player;
 	t_image		*wall;
 	t_player	*player;
+	t_map		*map;
 }			t_game;
 
 
@@ -76,5 +88,10 @@ int		so_press(int keycode, t_game *game);
 int		so_realese(int keycode, t_game *game);
 void	so_move(t_game **game);
 void	so_init(t_game *game);
+
+bool	so_parsing(t_game *game, char *path_map);
+char	*get_next_line(int fd);
+t_map	*so_init_map(void);
+t_bool  validate_map(t_map *level, int x, int y);
 
 #endif

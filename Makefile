@@ -6,7 +6,7 @@
 #    By: mathmart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 17:24:21 by mathmart          #+#    #+#              #
-#    Updated: 2021/12/02 00:14:14 by mathmart         ###   ########.fr        #
+#    Updated: 2021/12/02 19:10:00 by mathmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ WHITE = \033[1;49;97m
 NAME = Solong
 
 # Include
-HEADER = ./Includes
+HEADER = ./Includes/Solong.h
 
 # Lib
 LIB_PERSO = ./libft
@@ -41,26 +41,42 @@ LIB = -L Mlx -l Mlx
 # chemin Sources
 . = Sources/
 
-SRCS = sources/bettermlx/display/bettermlx_clean_display.c \
-	sources/bettermlx/display/bettermlx_draw_line.c \
-	sources/bettermlx/display/bettermlx_get_color.c \
-	sources/bettermlx/display/bettermlx_get_memory_position.c \
-	sources/bettermlx/display/bettermlx_pixel_put.c \
-	sources/bettermlx/display/bettermlx_put_image.c \
-	sources/bettermlx/display/bettermlx_render.c \
-	sources/bettermlx/display/bettermlx_set_color.c \
-	sources/bettermlx/hook/bettermlx_hook.c \
-	sources/bettermlx/hook/bettermlx_register_loop.c \
-	sources/bettermlx/window/bettermlx_destroy_image.c \
-	sources/bettermlx/window/bettermlx_destroy_window.c \
-	sources/bettermlx/window/bettermlx_init_image.c \
-	sources/bettermlx/window/bettermlx_init_window.c \
-	sources/bettermlx/window/bettermlx_init_xpm_image.c \
-	Sources/Close/So_esc.c \
-	Sources/Close/So_redcross.c \
-	Sources/Init/so_init.c \
-	sources/main.c \
-	sources/Move/so_move.c
+D = sources/bettermlx/display/
+
+H = sources/bettermlx/hook/
+
+W = sources/bettermlx/window/
+
+C = Sources/Close/
+
+I = Sources/Init/
+
+M = sources/Move/
+
+P = sources/Parsing/
+
+SRCS = $(D)bettermlx_clean_display.c \
+	$(D)bettermlx_draw_line.c \
+	$(D)bettermlx_get_color.c \
+	$(D)bettermlx_get_memory_position.c \
+	$(D)bettermlx_pixel_put.c \
+	$(D)bettermlx_put_image.c \
+	$(D)bettermlx_render.c \
+	$(D)bettermlx_set_color.c \
+	$(H)bettermlx_hook.c \
+	$(H)bettermlx_register_loop.c \
+	$(W)bettermlx_destroy_image.c \
+	$(W)bettermlx_destroy_window.c \
+	$(W)bettermlx_init_image.c \
+	$(W)bettermlx_init_window.c \
+	$(W)bettermlx_init_xpm_image.c \
+	$(C)So_esc.c \
+	$(C)So_redcross.c \
+	$(I)so_init.c \
+	$(M)so_move.c \
+	$(P)Start_Parsing.c \
+	$(P)validate_map.c \
+	sources/main.c
 # sources/Put_groud.c \
 
 

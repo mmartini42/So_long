@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_file.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 14:58:19 by lduplain          #+#    #+#             */
-/*   Updated: 2021/05/12 12:40:02 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/12/02 17:21:31 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 **	START DEFINES
 */
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE	32
+#  define BUFFER_SIZE	1
 # endif
 
 typedef struct s_file
