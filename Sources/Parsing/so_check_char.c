@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:45:41 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 18:34:53 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/03 18:44:04 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static bool	so_error_map(t_game	*game)
 {
 	so_free_player(game->player);
 	so_free_map(game->map);
-	ft_putstr_err("Map Error2");
+	ft_putstr_err("Map Error2\n");
 	return (false);
 }
 

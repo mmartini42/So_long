@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 17:04:48 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 18:34:18 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/03 18:43:51 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	so_error_arguments(t_game *game)
 {
 	(void)game;
-	ft_putstr_err("Error need more argurments");
+	ft_putstr_err("Error need more argurments\n");
 	exit(EXIT_FAILURE);
 }
 
@@ -46,6 +46,6 @@ bool	so_parsing_errors(t_game *game, int status)
 
 	so_init_pars_errors(so_pars_errors);
 	so_pars_errors[status](game);
-	ft_putstr_err("Map Error");
+	ft_putstr_err("Map Error\n");
 	return (false);
 }
