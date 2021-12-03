@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Start_Parsing.c                                    :+:      :+:    :+:   */
+/*   so_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:37:23 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 18:37:20 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/03 18:40:41 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static int	so_open(t_game *game, char *path_map)
 	{
 		close(fd1);
 		close(fd2);
-		puts(path_map);
 		game->map->my_file = ft_open_file(path_map, O_RDONLY);
 		return (EXIT_SUCCESS);
 	}
