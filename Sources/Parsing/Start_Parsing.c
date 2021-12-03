@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:37:23 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 18:17:13 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/03 18:37:20 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,5 @@ bool	so_parsing(t_game *game, char *path_map)
 	if (so_validate_map(game->map, game->player->pos_x, \
 		game->player->pos_y) == false)
 		return (false);
-	puts("OK");
 	return (true);
 }
