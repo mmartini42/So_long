@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 23:30:32 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 18:10:45 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/03 20:00:51 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 static void	so_hook(t_game *game)
 {
 	bettermlx_hook(game->window, KEY_PRESS, &so_press, game);
-	// bettermlx_hook(game->window, KEY_PRESS, &so_esc, game->window);
 	bettermlx_hook(game->window, KEY_RELEASE, &so_realese, game);
 	so_move(&game);
-	bettermlx_hook(game->window, DESTROY_NOTIFY, &so_redcross, game->window);
+	bettermlx_hook(game->window, DESTROY_NOTIFY, &so_redcross, game);
 }
 
 static void	so_put_ground(t_game *game)

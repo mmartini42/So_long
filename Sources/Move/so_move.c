@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 17:10:25 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/01 23:10:56 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/03 20:41:08 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ void	so_move(t_game **game)
 	p_value =  (((*game)->window->width - (*game)->img_player->width));
 	if ((*game)->player->key.key_right == true)
 		if (((*game)->player->pos_x) < p_value)
+		{
+			printf("%d           %d\n", p_value, (*game)->player->pos_x);
 			(*game)->player->pos_x += MOOVE_SPEED;
+		}
  	if ((*game)->player->key.key_left == true)
 		if ((true_x - MOOVE_SPEED) > 0)
 			(*game)->player->pos_x -= MOOVE_SPEED;
@@ -59,6 +62,6 @@ int	so_press(int keycode, t_game *game)
 	if (keycode == KEY_S)
 		game->player->key.key_down = true;
 	if (keycode == KEY_ESC)
-		so_esc(keycode, game->window);
+		so_esc(keycode, game);
 	return (0);
 }

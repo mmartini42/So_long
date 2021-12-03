@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:30:54 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 18:12:31 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/03 20:01:01 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include "Solong.h"
 
 /* CLOSE */
-int		so_esc(int keycode, t_window *Window);
-int		so_redcross(t_window *window);
+int		so_esc(int keycode, t_game *game);
+int		so_redcross(t_game *game);
 
 /* HOOK */
 int		so_press(int keycode, t_game *game);
