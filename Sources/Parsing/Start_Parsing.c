@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Start_Parsing.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/03 16:37:23 by mathmart          #+#    #+#             */
+/*   Updated: 2021/12/03 18:17:13 by mathmart         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "Solong.h"
 
-int	so_open(t_game *game, char *path_map)
+static int	so_open(t_game *game, char *path_map)
 {
 	int		fd1;
 	int		fd2;
@@ -40,11 +51,12 @@ static bool	so_get_map(t_game *game)
 {
 	short	status;
 
-	status	= 0;
+	status = 0;
 	while (ft_read_next_line(game->map->my_file) == read_success)
 	{
 		game->map->map_height++;
-		game->map->map = ft_add_str_to_str_array(game->map->map, ft_strdup(game->map->my_file->readed_line), TRUE);
+		game->map->map = ft_add_str_to_str_array(game->map->map, \
+			ft_strdup(game->map->my_file->readed_line), TRUE);
 		if (status == 0)
 		{
 			game->map->map_width = ft_strlen(game->map->map[0]);
@@ -52,55 +64,12 @@ static bool	so_get_map(t_game *game)
 		}
 	}
 	game->map->map_height++;
-	game->map->map = ft_add_str_to_str_array(game->map->map, ft_strdup(game->map->my_file->readed_line), TRUE);
+	game->map->map = ft_add_str_to_str_array(game->map->map, \
+		ft_strdup(game->map->my_file->readed_line), TRUE);
 	return (so_check_value(game));
 }
 
-/* bool	so_pars_fist_or_last_line(char *line)
-{
-	int	i;
-
-	i = -1;
-	while (line[++i] != NULL)
-	{
-		if (line[i] != '1')
-			return (EXIT_FAILURE);
-	}
-	return (EXIT_SUCCESS);
-} */
-
-/* bool	autorised_char(t_game *game, int i)
-{
-	if (i == '1' || i == '0')
-		return (EXIT_SUCCESS);
-	else if (i == 'C')
-		.
-	i == 'E' || i == 'P')
-}
-
-bool	so_check_other_line(char **map, int pos_y)
-{
-	int index_line;
-
-	index_line = 0;
-	i = 1;
-	size_first_line = game->map->map[0];
-	so_pars_fist_or_last_line(game->map->map[0]);
-	while (game->map->map[i])
-	{
-		if (size_first_line != ft_strlen(game->map->map[i]))
-			return (EXIT_FAILURE);
-		if (i == game->map->map_height)
-			if (so_pars_fist_or_last_line(game->map->map[i]) == EXIT_FAILURE)
-				return (EXIT_FAILURE);
-		else if (so_check_other_line(game->map->map, i) == EXIT_FAILURE)
-			return (EXIT_FAILURE);
-		i++;
-	}
-	return (EXIT_SUCCESS);
-} */
-
-static bool so_get_p_position(t_game *game)
+static bool	so_get_p_position(t_game *game)
 {
 	size_t	y;
 	size_t	x;
@@ -127,14 +96,16 @@ static bool so_get_p_position(t_game *game)
 bool	so_parsing(t_game *game, char *path_map)
 {
 	if (so_open(game, path_map) == EXIT_FAILURE)
-		return (false);
+		return (so_parsing_errors(game, OPEN_ERRORS));
 	if (so_get_map(game) == false)
-		return (false);
+		return (so_parsing_errors(game, MAP_ERRORS));
+	ft_close_file(game->map->my_file);
 	so_get_p_position(game);
-	if (validate_map(game->map, game->player->pos_x, game->player->pos_y) == FALSE)
+	if (so_check_char(game) == false)
+		return (false);
+	if (so_validate_map(game->map, game->player->pos_x, \
+		game->player->pos_y) == false)
 		return (false);
 	puts("OK");
-/* 	if (so_check_size_line(game) == EXIT_FAILURE)
-		return (EXIT_FAILURE); */
 	return (true);
 }

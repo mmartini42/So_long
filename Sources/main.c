@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 23:30:32 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/02 19:06:55 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/03 18:10:45 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ static t_player	*so_init_player(void)
 	player = ft_calloc(1, sizeof(t_player));
 	if (!player)
 		return (NULL);
-	//INIT les pos avec le parsing
 	player->pos_x = 0;
 	player->pos_y = 0;
 	return (player);
@@ -71,17 +70,11 @@ int	main(int ac, char **av)
 	t_game	game;
 
 	if (ac != 2)
-	{
-		printf("Tes con ou quoi la MAPPP !!!!!\n");
-		return (EXIT_FAILURE);
-	}
+		return (so_parsing_errors(&game, ARGUMENT_ERRORS));
 	game.map = so_init_map();
 	game.player = so_init_player();
 	if (so_parsing(&game, av[1]) == false)
-	{
-		printf("MAPPP DE MERDEEE !!!!!!\n");
 		return (EXIT_FAILURE);
-	}
 	so_init(&game);
 	bettermlx_register_loop(game.window, &game, render_loop);
 }
