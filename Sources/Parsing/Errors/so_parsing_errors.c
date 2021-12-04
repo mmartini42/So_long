@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 17:04:48 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 18:43:51 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/04 16:19:18 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void	so_error_open(t_game *game)
 	ft_close_file(game->map->my_file);
 	so_free_map(game->map);
 	so_free_player(game->player);
+	ft_putstr_err("Map Error\n");
 }
 
 static void	so_error_map(t_game *game)
@@ -31,6 +32,7 @@ static void	so_error_map(t_game *game)
 	ft_close_file(game->map->my_file);
 	so_free_map(game->map);
 	so_free_player(game->player);
+	ft_putstr_err("Map Error\n");
 }
 
 static void	so_init_pars_errors(void (*so_pars_errors[3])(t_game *))
@@ -46,6 +48,5 @@ bool	so_parsing_errors(t_game *game, int status)
 
 	so_init_pars_errors(so_pars_errors);
 	so_pars_errors[status](game);
-	ft_putstr_err("Map Error\n");
 	return (false);
 }

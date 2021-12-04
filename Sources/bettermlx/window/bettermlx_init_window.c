@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 20:42:38 by mathmart          #+#    #+#             */
-/*   Updated: 2021/11/30 17:59:14 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/04 16:16:19 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ t_window	*bettermlx_init_window(
 	window->mlx_ptr = mlx_init();
 	window->win_ptr = mlx_new_window(window->mlx_ptr, width, height, title);
 	window->image = bettermlx_init_image(window, window->width, window->height);
-	// mlx_do_key_autorepeatoff(window->mlx_ptr);
 	return (window);
 }

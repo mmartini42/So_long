@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 17:10:25 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 20:41:08 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/04 16:13:14 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	so_move(t_game **game)
 	if ((*game)->player->key.key_right == true)
 		if (((*game)->player->pos_x) < p_value)
 		{
-			printf("%d           %d\n", p_value, (*game)->player->pos_x);
+			printf("%d           %d\n", p_value, (*game)->player->pos_x + );
 			(*game)->player->pos_x += MOOVE_SPEED;
 		}
  	if ((*game)->player->key.key_left == true)
