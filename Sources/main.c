@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 23:30:32 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/01 23:43:36 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/03 20:00:51 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 static void	so_hook(t_game *game)
 {
 	bettermlx_hook(game->window, KEY_PRESS, &so_press, game);
-	// bettermlx_hook(game->window, KEY_PRESS, &so_esc, game->window);
 	bettermlx_hook(game->window, KEY_RELEASE, &so_realese, game);
 	so_move(&game);
-	bettermlx_hook(game->window, DESTROY_NOTIFY, &so_redcross, game->window);
+	bettermlx_hook(game->window, DESTROY_NOTIFY, &so_redcross, game);
 }
 
 static void	so_put_ground(t_game *game)
@@ -53,10 +52,28 @@ static int	render_loop(t_game *game)
 	return (0);
 }
 
-int	main(void)
+static t_player	*so_init_player(void)
+{
+	t_player	*player;
+
+	player = ft_calloc(1, sizeof(t_player));
+	if (!player)
+		return (NULL);
+	player->pos_x = 0;
+	player->pos_y = 0;
+	return (player);
+}
+
+int	main(int ac, char **av)
 {
 	t_game	game;
 
+	if (ac != 2)
+		return (so_parsing_errors(&game, ARGUMENT_ERRORS));
+	game.map = so_init_map();
+	game.player = so_init_player();
+	if (so_parsing(&game, av[1]) == false)
+		return (EXIT_FAILURE);
 	so_init(&game);
 	bettermlx_register_loop(game.window, &game, render_loop);
 }
