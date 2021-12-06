@@ -31,6 +31,7 @@ SOURCES += ft_strlen.c
 SOURCES += distance3.c
 SOURCES += ft_read_next_line.c
 SOURCES += ft_ulltoa_ibase.c
+SOURCES += ft_itoa.c
 SOURCES += add_vector_coord.c
 SOURCES += printf_preprocess.c
 SOURCES += create_icolor.c

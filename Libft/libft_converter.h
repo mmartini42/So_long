@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_converter.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 13:16:50 by lduplain          #+#    #+#             */
-/*   Updated: 2021/05/11 15:35:08 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/12/06 13:44:15 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ int			ft_natoi(char *str, size_t n);
 **	./converter/ft_atoll.c
 */
 long long	ft_atoll(char *str);
+
+/*
+**	Convert int number to mallocated string.
+*/
+char		*ft_itoa(int number);
 
 /*
 **	Convert unsigned long long number to mallocated string in ibase ibase.

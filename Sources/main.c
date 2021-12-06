@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 23:30:32 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/06 18:08:00 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/06 18:12:08 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ static void	so_put_ground(t_game *game)
 		{
 			while (x < game->window->width)
 			{
-				// bettermlx_put_image(game->window, game->img_player, x, y);
 				mlx_put_image_to_window(game->window->mlx_ptr, \
 				game->window->win_ptr, game->dirt->img_ptr, x, y);
 				x += game->dirt->width;
@@ -48,15 +47,11 @@ static int	render_loop(t_game *game)
 	so_put_ground(game);
 	so_get_wall_pos(game);
 	so_hook(game);
-/* 	bettermlx_put_image(game->window, game->img_player,\
-		get_render_x(game, game->player->pos_x), \
-		get_render_y(game, game->player->pos_y)); */
 	mlx_put_image_to_window(game->window->mlx_ptr, \
 				game->window->win_ptr, game->img_player->img_ptr, \
 				get_render_x(game, game->player->pos_x), \
 				get_render_y(game, game->player->pos_y));
-	// bettermlx_render(game->window);
-	// mlx_do_sync (game->window->mlx_ptr);
+	mlx_do_sync (game->window->mlx_ptr);
 	return (0);
 }
 
@@ -84,5 +79,4 @@ int	main(int ac, char **av)
 		return (EXIT_FAILURE);
 	so_init(&game);
 	bettermlx_register_loop(game.window, &game, render_loop);
-	// mlx_loop(game.window->mlx_ptr);
 }

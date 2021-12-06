@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 13:30:47 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/06 17:59:37 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/06 18:11:22 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,25 @@
 
 void	so_get_wall_pos(t_game *game)
 {
-	size_t	i;
-	size_t	j;
-	int	x;
-	int	y;
+	size_t	y;
+	size_t	x;
 
-	i = 0;
-	while (game->map->map[i])
+	y = 0;
+	while (game->map->map[y])
 	{
-		j = 0;
-		while (game->map->map[i][j])
+		x = 0;
+		while (game->map->map[y][x])
 		{
-			if (game->map->map[i][j] == '1'){
-				y = get_render_y(game, i * game->wall->height);
-				x = get_render_x(game, j * game->wall->width);
-			/* 	bettermlx_put_image(game->window, game->wall, \
-					get_render_x(game, j * game->wall->width), \
-					get_render_y(game, i * game->wall->height)); */
-				mlx_put_image_to_window(game->window->mlx_ptr, game->window->win_ptr, game->wall->img_ptr, x, y);}
-			j++;
+			if (game->map->map[y][x] == '1')
+			{
+				mlx_put_image_to_window(game->window->mlx_ptr, \
+				game->window->win_ptr, game->wall->img_ptr, \
+				get_render_x(game, x * game->wall->width), \
+				get_render_y(game, y * game->wall->width));
+				}
+			x++;
 		}
-		i++;
+		y++;
 	}
 
 }
