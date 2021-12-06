@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:26:03 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 17:13:45 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/06 13:46:49 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef	struct s_map
 	size_t	map_width;
 	size_t	map_height;
 	char	**map;
+	char	**wall;
 	char	*line;
 	bool	check_if_ok;
 }				t_map;

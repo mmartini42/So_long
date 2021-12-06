@@ -1,38 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_free.c                                          :+:      :+:    :+:   */
+/*   so_wall.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/03 17:21:25 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/06 14:02:15 by mathmart         ###   ########.fr       */
+/*   Created: 2021/12/06 13:23:51 by mathmart          #+#    #+#             */
+/*   Updated: 2021/12/06 13:24:00 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Solong.h"
 
-void	so_free_player(t_player *player)
-{
-	free(player);
-	player = NULL;
-}
 
-void	so_free_map(t_map *map)
-{
-	size_t	i;
 
-	i = 0;
-	while (map->map[i])
-	{
-		free(map->map[i]);
-		i++;
-	}
-	free(map->map);
-	map->map = NULL;
-	if (map->line)
-		free(map->line);
-	map->line = NULL;
-	free(map);
-	map = NULL;
-}

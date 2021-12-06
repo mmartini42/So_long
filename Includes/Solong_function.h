@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:30:54 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 20:01:01 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/06 14:48:12 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		so_press(int keycode, t_game *game);
 int		so_realese(int keycode, t_game *game);
 
 
-void	so_move(t_game **game);
+void	so_move(t_game *game);
 
 /* INIT */
 void	so_init(t_game *game);
@@ -36,6 +36,10 @@ char	*get_next_line(int fd);
 t_map	*so_init_map(void);
 bool	so_validate_map(t_map *level, int x, int y);
 bool	so_check_char(t_game *game);
+void	so_get_wall_pos(t_game *game);
+
+float	get_render_x(t_game *game, float x);
+float	get_render_y(t_game *game, float y);
 
 /* ERRORS */
 bool	so_parsing_errors(t_game *game, int status);
@@ -43,6 +47,5 @@ bool	so_parsing_errors(t_game *game, int status);
 /* MEMORY */
 void	so_free_map(t_map *map);
 void	so_free_player(t_player *player);
-
 
 #endif

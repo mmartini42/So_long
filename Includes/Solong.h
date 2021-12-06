@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:33:03 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 18:37:00 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/06 17:22:05 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@
 # define KEY_S 1
 # define KEY_D 2
 # define KEY_SPACE 49
-# define MOOVE_SPEED 50
+# define MOVE_SPEED 40
 
 #endif

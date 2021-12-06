@@ -6,11 +6,21 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 23:41:07 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 20:38:52 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/06 14:48:35 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Solong.h"
+
+float	get_render_x(t_game *game, float x)
+{
+	return (game->window->width * 0.5 - game->player->pos_x + x - game->img_player->width * 0.5);
+}
+
+float	get_render_y(t_game *game, float y)
+{
+	return (game->window->height * 0.5 - game->player->pos_y + y - game->img_player->height * 0.5);
+}
 
 static void	so_init_player_pos(t_player *player, t_image *dirt)
 {
@@ -29,15 +39,16 @@ t_map	*so_init_map(void)
 	map->map_width = 0;
 	map->line = NULL;
 	map->map = NULL;
+	map->wall = NULL;
 	map->check_if_ok = false;
 	return (map);
 }
 
 void	so_init(t_game *game)
 {
-	game->window = bettermlx_init_window("So_long", 1080, 720, 1);
+	game->window = bettermlx_init_window("So_long", 1280, 720, 1);
 	game->dirt = bettermlx_init_xpm_image(game->window, "./Sources/Xpm/dirt.xpm");
 	game->img_player = bettermlx_init_xpm_image(game->window, "./Sources/Xpm/Marvin80.xpm");
-	// so_init_player_pos(game->player, game->dirt);
+	so_init_player_pos(game->player, game->dirt);
 	game->wall = bettermlx_init_xpm_image(game->window, "./Sources/Xpm/wall1_80.xpm");
 }
