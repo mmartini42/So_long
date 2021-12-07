@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 17:30:23 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 20:02:06 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/07 15:13:55 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	so_redcross(t_game *game)
 {
-	t_window *win;
+	t_window	*win;
 
 	win = game->window;
 	bettermlx_destroy_window(&win);

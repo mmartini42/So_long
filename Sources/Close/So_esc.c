@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 17:27:29 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/03 20:00:36 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/07 15:13:47 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	so_esc(int keycode, t_game *game)
 {
-	t_window *win;
+	t_window	*win;
 
 	win = game->window;
 	if (keycode == KEY_ESCAPE)

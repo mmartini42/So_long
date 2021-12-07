@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 17:10:25 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/06 18:19:01 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/07 15:16:05 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	so_move(t_game *game)
 	if (player->key.key_down == true)
 		so_get_down(game);
 }
-
 
 int	so_realese(int keycode, t_game *game)
 {
