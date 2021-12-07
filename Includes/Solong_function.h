@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:30:54 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/06 18:18:52 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/07 17:50:36 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	so_get_up(t_game *game);
 
 /* ERRORS */
 bool	so_parsing_errors(t_game *game, int status);
+void	so_kill_open(t_game *game);
 
 /* MEMORY */
 void	so_free_map(t_map *map);
