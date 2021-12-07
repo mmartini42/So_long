@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:37:23 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/06 13:58:28 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/07 18:39:02 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,14 @@
 static int	so_open(t_game *game, char *path_map)
 {
 	int		fd1;
-	int		fd2;
 
-	fd1 = open(path_map, O_DIRECTORY);
-	fd2 = open(path_map, O_RDONLY);
-	if ((fd1 == -1) && (fd2 != -1))
-	{
-		close(fd1);
-		close(fd2);
-		game->map->my_file = ft_open_file(path_map, O_RDONLY);
-		return (EXIT_SUCCESS);
-	}
-	close(fd1);
-	close(fd2);
-	return (EXIT_FAILURE);
+	fd1 = open(path_map, O_RDONLY);
+	if (fd1 == -1)
+		so_kill_open(game);
+	game->map->my_file = ft_open_file(path_map, O_RDONLY);
+	if (!read(game->map->my_file->c_fd, 0, 0))
+		return (false);
+	return (EXIT_SUCCESS);
 }
 
 static bool	so_check_value(t_game *game)
@@ -94,6 +88,11 @@ static bool	so_get_p_position(t_game *game)
 
 bool	so_parsing(t_game *game, char *path_map)
 {
+	int		fd1;
+
+	fd1 = open(path_map, O_DIRECTORY);
+	if (fd1 != -1)
+		so_kill_open(game);
 	if (so_open(game, path_map) == EXIT_FAILURE)
 		return (so_parsing_errors(game, OPEN_ERRORS));
 	if (so_get_map(game) == false)
@@ -105,5 +104,6 @@ bool	so_parsing(t_game *game, char *path_map)
 	if (so_validate_map(game->map, game->player->pos_x, \
 		game->player->pos_y) == false)
 		return (false);
+	close(fd1);
 	return (true);
 }
