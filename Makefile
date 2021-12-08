@@ -6,13 +6,12 @@
 #    By: mathmart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 17:24:21 by mathmart          #+#    #+#              #
-#    Updated: 2021/12/07 20:43:28 by mathmart         ###   ########.fr        #
+#    Updated: 2021/12/08 16:02:21 by mathmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
--include Sources.mk
--include Header.mk
--include Objects.mk
+-include ./Sources/Config/Sources.mk
+-include ./Sources/Config/Header.mk
 
 # Colors
 GREY = \033[4;34m
@@ -45,9 +44,6 @@ LIB = -L Mlx -l Mlx
 # chemin Sources
 . = Sources/
 
-# normal Flags
-CC = gcc
-
 LIBFT = ./libft/libft.a
 
 OBJS = $(SRCS:%.c=%.o)
@@ -58,17 +54,17 @@ OBJ_DIR := Objects
 
 OBJ_PATH := $(addprefix $(OBJ_DIR)/, $(OBJS))
 
-all: gmk libft $(NAME) $(HEADER)
-
 $(OBJ_DIR)/%.o: %.c $(HEADER) | $(OBJ_DIR)
 	@printf "\033[2K\r$(PURPLE)$<: $(CYAN)loading..$(RESET)"
 	@gcc $(CFLAGS) -c $< -o $@
 
-$(NAME): $(HEADER) $(OBJ_PATH)
+$(NAME): $(OBJ_PATH) $(HEADER)
 	@$(MAKE) -C Libft/
 	@$(MAKE) -C $(LIB_MLX)
-	@$(CC) $(CFLAGS) $(LIB) $(SRCS) -framework OpenGL -framework AppKit Libft/libft.a -o $(NAME)
+	@gcc $(CFLAGS) $(LIB) $(SRCS) -framework OpenGL -framework AppKit Libft/libft.a -o $(NAME)
 	@printf "\033[2K\r$(BLUE)$(NAME)$(RESET)$(BLUEE): $(ICONOK)Compiled [√]$(RESET)\n"
+
+all: gmk libft $(NAME) $(HEADER)
 
 $(OBJ_DIR):
 	@mkdir -p `find Sources -type d | sed 's/Sources/Objects\/Sources/g'`
@@ -81,12 +77,12 @@ clean:
 	@printf "\033[1;31mDelete OBJS $(CO_DELET)$(NAME)\033[3;32m [√]\033[0m\n"
 
 gmk:
-	bash ./Scripts/gmk.sh
+	@bash ./Sources/Config/Scripts/gmk.sh
 
 fclean:
 	@$(MAKE) fclean -C $(LIB_PERSO)
 	@$(MAKE) clean -C $(LIB_MLX)
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJ_PATH)
 	@$(RM) $(NAME)
 	@$(RM) -rf Solong.dSYM a.out
 	@printf "\033[1;31mDelete $(CO_DELET)$(NAME)\033[3;32m [√]\033[0m\n"
