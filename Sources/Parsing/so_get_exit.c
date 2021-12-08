@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 19:40:02 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/08 19:45:31 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/09 00:23:45 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,4 @@ void	so_put_exit(t_game *game)
 		game->window->win_ptr, game->exit->img_ptr, \
 		get_render_x(game, x * game->exit->width), \
 		get_render_y(game, y * game->exit->height));
-
 }

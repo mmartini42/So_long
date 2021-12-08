@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 19:12:56 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/08 19:39:02 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/09 00:23:52 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,4 @@ void	so_put_star(t_game *game)
 		game->window->win_ptr, game->star->img_ptr, \
 		get_render_x(game, x * game->star->width), \
 		get_render_y(game, y * game->star->height));
-
 }

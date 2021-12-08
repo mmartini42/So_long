@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 23:41:07 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/09 00:08:24 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/09 00:21:47 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	so_init(t_game *game)
 {
 	game->window = bettermlx_init_window("So_long", 1280, 720, 1);
 	game->dirt = bettermlx_init_xpm_image(game->window, \
-		"./Sources/Xpm/dirt.xpm");
+		"./Sources/Xpm/bg2.xpm");
 	game->img_player = bettermlx_init_xpm_image(game->window, \
 		"./Sources/Xpm/Marvin80.xpm");
 	so_init_player_pos(game->player, game->dirt);
