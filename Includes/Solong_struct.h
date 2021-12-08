@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:26:03 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/08 22:35:08 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/09 00:04:14 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ typedef struct	s_game
 	t_image		*exit;
 	t_player	*player;
 	t_map		*map;
+	int			mov;
 }			t_game;
 
 #endif

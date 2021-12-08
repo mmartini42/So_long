@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 23:41:07 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/08 22:36:17 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/09 00:08:24 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,5 @@ void	so_init(t_game *game)
 		"./Sources/Xpm/exit80.xpm");
 	game->star = bettermlx_init_xpm_image(game->window, \
 		"./Sources/Xpm/star.xpm");
+	game->mov = 0;
 }

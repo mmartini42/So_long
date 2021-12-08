@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:13:35 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/07 15:15:55 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/09 00:06:34 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	so_get_right(t_game *game)
 	else
 		player->pos_x = (player->pos_x + game->img_player->width + \
 		MOVE_SPEED) / 80 * 80 - game->img_player->width;
+	game->mov += 1;
+	printf("%d\n", game->mov);
 }
 
 void	so_get_left(t_game *game)
@@ -39,6 +41,8 @@ void	so_get_left(t_game *game)
 	else
 		player->pos_y = (player->pos_y - MOVE_SPEED) / 80 * \
 			80 + game->wall->width;
+	game->mov += 1;
+	printf("%d\n", game->mov);
 }
 
 void	so_get_up(t_game *game)
@@ -53,6 +57,8 @@ void	so_get_up(t_game *game)
 	else
 		player->pos_y = (player->pos_y - MOVE_SPEED) / 80 * \
 			80 + game->wall->height;
+	game->mov += 1;
+	printf("%d\n", game->mov);
 }
 
 void	so_get_down(t_game *game)
@@ -68,4 +74,6 @@ void	so_get_down(t_game *game)
 	else
 		player->pos_y = (player->pos_y + game->img_player->height + \
 		MOVE_SPEED) / 80 * 80 - game->img_player->height;
+	game->mov += 1;
+	printf("%d\n", game->mov);
 }
