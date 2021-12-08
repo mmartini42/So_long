@@ -6,7 +6,7 @@
 #    By: mathmart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 17:24:21 by mathmart          #+#    #+#              #
-#    Updated: 2021/12/08 16:02:21 by mathmart         ###   ########.fr        #
+#    Updated: 2021/12/08 19:25:52 by mathmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,10 @@ clean:
 	@printf "\033[1;31mDelete OBJS $(CO_DELET)$(NAME)\033[3;32m [√]\033[0m\n"
 
 gmk:
-	@bash ./Sources/Config/Scripts/gmk.sh
+	@echo "SRCS += " > ./Sources/Config/Sources.mk
+	@find Sources -name '*.c' | sed 's/^/SRCS += /' >> ./Sources/Config/Sources.mk
+	@echo "HEADER += " > ./Sources/Config/Header.mk
+	@find Includes -name '*.h' | sed 's/^/HEADER += /' >? ./Sources/Config/Header.mk
 
 fclean:
 	@$(MAKE) fclean -C $(LIB_PERSO)

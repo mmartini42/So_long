@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:26:03 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/07 17:19:10 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:36:58 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ typedef	struct s_map
 	char	**map;
 	char	**wall;
 	char	*line;
+	int		star[2];
+	int		exit[2];
 	bool	check_if_ok;
 }				t_map;
 
@@ -69,7 +71,7 @@ typedef struct	s_game
 	t_image		*dirt;
 	t_image		*img_player;
 	t_image		*wall;
-	t_image		*cons;
+	t_image		*star;
 	t_image		*exit;
 	t_player	*player;
 	t_map		*map;

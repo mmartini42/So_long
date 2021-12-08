@@ -1,3 +1,4 @@
+SRCS += 
 SRCS += Sources/bettermlx/display/bettermlx_clean_display.c
 SRCS += Sources/bettermlx/display/bettermlx_draw_line.c
 SRCS += Sources/bettermlx/display/bettermlx_get_color.c
@@ -23,6 +24,8 @@ SRCS += Sources/Move/so_move.c
 SRCS += Sources/Parsing/Errors/so_kill_open.c
 SRCS += Sources/Parsing/Errors/so_parsing_errors.c
 SRCS += Sources/Parsing/so_check_char.c
+SRCS += Sources/Parsing/so_get_exit.c
+SRCS += Sources/Parsing/so_get_stars.c
 SRCS += Sources/Parsing/so_get_wall_pos.c
 SRCS += Sources/Parsing/so_parsing.c
 SRCS += Sources/Parsing/so_validate_map.c

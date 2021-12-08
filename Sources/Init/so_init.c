@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 23:41:07 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/07 15:14:27 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:49:02 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,8 @@ void	so_init(t_game *game)
 	so_init_player_pos(game->player, game->dirt);
 	game->wall = bettermlx_init_xpm_image(game->window, \
 		"./Sources/Xpm/wall1_80.xpm");
+	game->exit = bettermlx_init_xpm_image(game->window, \
+		"./Sources/Xpm/exit80.xpm");
+	game->star = bettermlx_init_xpm_image(game->window, \
+		"./Sources/Xpm/star.xpm");
 }

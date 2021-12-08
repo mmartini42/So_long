@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:30:54 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/07 17:50:36 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/08 19:41:20 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ t_map	*so_init_map(void);
 bool	so_validate_map(t_map *level, int x, int y);
 bool	so_check_char(t_game *game);
 void	so_get_wall_pos(t_game *game);
+void	so_get_star(t_game *game);
+void	so_put_star(t_game *game);
+void	so_get_exit(t_game *game);
+void	so_put_exit(t_game *game);
 
 
 /* CAMERA */
