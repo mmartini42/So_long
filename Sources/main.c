@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 23:30:32 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/08 19:41:46 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/08 23:41:33 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,12 @@ static int	render_loop(t_game *game)
 	bettermlx_clean_display(game->window);
 	so_put_ground(game);
 	so_get_wall_pos(game);
+	so_check_pos(game);
 	so_put_exit(game);
-	so_put_star(game);
+	if (game->map->p_star == true)
+		so_put_star(game);
 	so_hook(game);
+	so_check_pos(game);
 	mlx_put_image_to_window(game->window->mlx_ptr, \
 				game->window->win_ptr, game->img_player->img_ptr, \
 				get_render_x(game, game->player->pos_x), \

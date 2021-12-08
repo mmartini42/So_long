@@ -19,6 +19,7 @@ SRCS += Sources/Close/So_redcross.c
 SRCS += Sources/Init/so_init.c
 SRCS += Sources/main.c
 SRCS += Sources/Memory/so_free.c
+SRCS += Sources/Move/so_check_pos.c
 SRCS += Sources/Move/so_gets.c
 SRCS += Sources/Move/so_move.c
 SRCS += Sources/Parsing/Errors/so_kill_open.c

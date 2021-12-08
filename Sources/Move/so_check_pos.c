@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   So_redcross.c                                      :+:      :+:    :+:   */
+/*   so_check_pos.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/29 17:30:23 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/08 22:41:42 by mathmart         ###   ########.fr       */
+/*   Created: 2021/12/08 22:29:16 by mathmart          #+#    #+#             */
+/*   Updated: 2021/12/08 23:43:37 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Solong.h"
 
-int	so_redcross(t_game *game)
+void	so_check_pos(t_game *game)
 {
-	t_window	*win;
+	t_player	*player;
+	t_map		*map;
+	int			x;
+	int			y;
 
-	win = game->window;
-	bettermlx_destroy_image(win, &game->exit);
-	bettermlx_destroy_image(win, &game->dirt);
-	bettermlx_destroy_image(win, &game->wall);
-	bettermlx_destroy_image(win, &game->img_player);
-	bettermlx_destroy_image(win, &game->star);
-	bettermlx_destroy_window(&win);
-	so_free_player(game->player);
-	so_free_map(game->map);
-	exit(0);
-	return (0);
+	player = game->player;
+	map = game->map;
+	x = (player->pos_x / 80);
+	y = (player->pos_y / 80);
+	if ((x == map->star[1]) && (y == map->star[0]))
+		game->map->p_star = false;
+	if ((x == map->exit[1]) && (y == map->exit[0]))
+		so_redcross(game);
 }

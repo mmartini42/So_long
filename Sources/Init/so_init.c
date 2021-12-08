@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 23:41:07 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/08 19:49:02 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/08 22:36:17 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ t_map	*so_init_map(void)
 	map->line = NULL;
 	map->map = NULL;
 	map->wall = NULL;
+	map->p_star = true;
 	map->check_if_ok = false;
 	return (map);
 }
