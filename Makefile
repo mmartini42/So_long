@@ -6,12 +6,12 @@
 #    By: mathmart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 17:24:21 by mathmart          #+#    #+#              #
-#    Updated: 2021/12/09 17:52:46 by mathmart         ###   ########.fr        #
+#    Updated: 2021/12/09 19:48:20 by mathmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
--include ./Sources/Config/Sources.mk
--include ./Sources/Config/Header.mk
+-include ./Config/Sources.mk
+-include ./Config/Header.mk
 
 #################################################################################
 #									Colors										#
@@ -37,7 +37,7 @@ WHITE		= \033[1;49;97m
 #									Variables									#
 #################################################################################
 
-NAME		= Solong
+NAME		= so_long
 LIB_PERSO	= ./libft
 LIB_MLX		= ./Mlx
 LIB			= -L Mlx -l Mlx
