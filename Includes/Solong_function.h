@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:30:54 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/08 22:43:34 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/09 14:24:55 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	so_check_pos(t_game *game);
 
 
 /* CAMERA */
-float	get_render_x(t_game *game, float x);
-float	get_render_y(t_game *game, float y);
+int		get_render_x(t_game *game, float x);
+int		get_render_y(t_game *game, float y);
 
 /* MOVE */
 void	so_get_right(t_game *game);
@@ -57,7 +57,7 @@ void	so_get_up(t_game *game);
 
 /* ERRORS */
 bool	so_parsing_errors(t_game *game, int status);
-void	so_kill_open(t_game *game);
+void	so_kill_open(t_game *game, int *fd);
 
 /* MEMORY */
 void	so_free_map(t_map *map);

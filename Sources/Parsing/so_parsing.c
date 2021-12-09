@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:37:23 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/08 19:41:57 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/09 14:26:03 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	so_open(t_game *game, char *path_map)
 
 	fd1 = open(path_map, O_RDONLY);
 	if (fd1 == -1)
-		so_kill_open(game);
+		so_kill_open(game, &fd1);
 	game->map->my_file = ft_open_file(path_map, O_RDONLY);
 	if (!read(game->map->my_file->c_fd, 0, 0))
 		return (false);
@@ -92,7 +92,7 @@ bool	so_parsing(t_game *game, char *path_map)
 
 	fd1 = open(path_map, O_DIRECTORY);
 	if (fd1 != -1)
-		so_kill_open(game);
+		so_kill_open(game, &fd1);
 	if (so_open(game, path_map) == EXIT_FAILURE)
 		return (so_parsing_errors(game, OPEN_ERRORS));
 	if (so_get_map(game) == false)

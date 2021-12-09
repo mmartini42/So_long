@@ -6,7 +6,7 @@
 #    By: mathmart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 17:24:21 by mathmart          #+#    #+#              #
-#    Updated: 2021/12/08 19:25:52 by mathmart         ###   ########.fr        #
+#    Updated: 2021/12/09 01:12:21 by mathmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,16 +59,18 @@ $(OBJ_DIR)/%.o: %.c $(HEADER) | $(OBJ_DIR)
 	@gcc $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ_PATH) $(HEADER)
-	@$(MAKE) -C Libft/
 	@$(MAKE) -C $(LIB_MLX)
 	@gcc $(CFLAGS) $(LIB) $(SRCS) -framework OpenGL -framework AppKit Libft/libft.a -o $(NAME)
 	@printf "\033[2K\r$(BLUE)$(NAME)$(RESET)$(BLUEE): $(ICONOK)Compiled [√]$(RESET)\n"
 
-all: gmk libft $(NAME) $(HEADER)
+all: gmk $(LIBFT) $(NAME) $(HEADER)
 
 $(OBJ_DIR):
 	@mkdir -p `find Sources -type d | sed 's/Sources/Objects\/Sources/g'`
 	@printf "\033[1;32mCreate OBJS_DIR $(CO_DELET)\033[3;32m [√]\033[0m\n"
+
+$(LIBFT):
+	@$(MAKE) -C Libft/
 
 clean:
 	@$(MAKE) clean -C $(LIB_PERSO)
@@ -80,7 +82,9 @@ gmk:
 	@echo "SRCS += " > ./Sources/Config/Sources.mk
 	@find Sources -name '*.c' | sed 's/^/SRCS += /' >> ./Sources/Config/Sources.mk
 	@echo "HEADER += " > ./Sources/Config/Header.mk
-	@find Includes -name '*.h' | sed 's/^/HEADER += /' >? ./Sources/Config/Header.mk
+	@find Includes -name '*.h' | sed 's/^/HEADER += /' >> ./Sources/Config/Header.mk
+	@find Libft -name '*.h' | sed 's/^/HEADER += /' >> ./Sources/Config/Header.mk
+	@find Mlx -name '*.h' | sed 's/^/HEADER += /' >> ./Sources/Config/Header.mk
 
 fclean:
 	@$(MAKE) fclean -C $(LIB_PERSO)
