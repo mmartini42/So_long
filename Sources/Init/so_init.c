@@ -6,19 +6,19 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 23:41:07 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/09 00:21:47 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/09 14:17:14 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Solong.h"
 
-float	get_render_x(t_game *game, float x)
+int		get_render_x(t_game *game, float x)
 {
 	return (game->window->width * 0.5 - game->player->pos_x + \
 		x - game->img_player->width * 0.5);
 }
 
-float	get_render_y(t_game *game, float y)
+int		get_render_y(t_game *game, float y)
 {
 	return (game->window->height * 0.5 - game->player->pos_y + \
 		y - game->img_player->height * 0.5);
