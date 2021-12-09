@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 23:30:32 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/09 00:04:58 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/09 20:25:34 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ static int	render_loop(t_game *game)
 	bettermlx_clean_display(game->window);
 	so_put_ground(game);
 	so_get_wall_pos(game);
+	printf("%s\n", "test");
 	so_check_pos(game);
 	so_put_exit(game);
 	if (game->map->p_star == true)

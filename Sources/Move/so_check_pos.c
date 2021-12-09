@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 22:29:16 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/08 23:43:37 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/09 20:27:16 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ void	so_check_pos(t_game *game)
 	y = (player->pos_y / 80);
 	if ((x == map->star[1]) && (y == map->star[0]))
 		game->map->p_star = false;
-	if ((x == map->exit[1]) && (y == map->exit[0]))
+	/* if ((player->pos_x >= (map->exit[1] * 80)) && \
+		(player->pos_y <= (map->exit[0] * 80)) && \
+		((player->pos_x + game->img_player->width) <= \
+		((map->exit[1] * 80) + game->exit->width)) && \
+		((player->pos_y + game->img_player->height) <= \
+		((map->exit[0] * 80)) + game->exit->height)) */
+	if (x == map->exit[1] && y == map->exit[0])
 		so_redcross(game);
 }
