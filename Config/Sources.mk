@@ -25,6 +25,7 @@ SRCS += Sources/Move/so_move.c
 SRCS += Sources/Parsing/Errors/so_kill_open.c
 SRCS += Sources/Parsing/Errors/so_parsing_errors.c
 SRCS += Sources/Parsing/so_check_char.c
+SRCS += Sources/Parsing/so_check_last_line.c
 SRCS += Sources/Parsing/so_get_exit.c
 SRCS += Sources/Parsing/so_get_stars.c
 SRCS += Sources/Parsing/so_get_wall_pos.c

@@ -6,7 +6,7 @@
 #    By: mathmart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 17:24:21 by mathmart          #+#    #+#              #
-#    Updated: 2021/12/10 14:38:24 by mathmart         ###   ########.fr        #
+#    Updated: 2021/12/10 18:39:38 by mathmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ $(OBJ_DIR)/%.o: %.c $(HEADER) | $(OBJ_DIR)
 #									Compilation C								#
 #################################################################################
 
-$(NAME): $(OBJ_PATH) $(HEADER)
+$(NAME): $(LIBFT) $(OBJ_PATH) $(HEADER)
 	@$(MAKE) -C $(LIB_MLX)
 	@gcc $(CFLAGS) $(LIB) $(SRCS) -framework OpenGL -framework AppKit $(LIBFT) -o $(NAME)
 	@printf "\033[2K\r$(BLUE)$(NAME)$(RESET)$(BLUEE): $(ICONOK)Compiled [√]$(RESET)\n"

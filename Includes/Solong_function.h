@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:30:54 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/09 14:24:55 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/10 18:49:18 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	so_put_exit(t_game *game);
 void	so_get_star(t_game *game);
 void	so_get_exit(t_game *game);
 void	so_check_pos(t_game *game);
+void	so_check_last_line(t_game *game);
 
 
 /* CAMERA */
