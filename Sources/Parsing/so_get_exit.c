@@ -6,19 +6,27 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 19:40:02 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/09 00:23:45 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:11:23 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Solong.h"
+
+static void	so_errors(void)
+{
+	ft_putstr_err("Map Error\n");
+	exit(EXIT_FAILURE);
+}
 
 void	so_get_exit(t_game *game)
 {
 	char	**map;
 	size_t	y;
 	size_t	x;
+	int		count;
 
 	y = -1;
+	count = 0;
 	map = game->map->map;
 	while (map[++y])
 	{
@@ -27,6 +35,9 @@ void	so_get_exit(t_game *game)
 		{
 			if (map[y][x] == 'E')
 			{
+				count += 1;
+				if (count > 1)
+					so_errors();
 				game->map->exit[0] = y;
 				game->map->exit[1] = x;
 			}

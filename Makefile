@@ -6,7 +6,7 @@
 #    By: mathmart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/16 17:24:21 by mathmart          #+#    #+#              #
-#    Updated: 2021/12/09 19:48:20 by mathmart         ###   ########.fr        #
+#    Updated: 2021/12/10 14:38:24 by mathmart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ NAME		= so_long
 LIB_PERSO	= ./libft
 LIB_MLX		= ./Mlx
 LIB			= -L Mlx -l Mlx
-LIBFT		= ./libft/libft.a
+LIBFT		= ./Libft/libft.a
 OBJS		= $(SRCS:%.c=%.o)
 CFLAGS		= -Wall -Wextra -glldb -flto -march=native -ffast-math -I ./Includes
 OBJ_DIR 	= Objects
@@ -101,12 +101,12 @@ fclean:
 #################################################################################
 
 gmk:
-	@echo "SRCS += " > ./Sources/Config/Sources.mk
-	@find Sources -name '*.c' | sed 's/^/SRCS += /' >> ./Sources/Config/Sources.mk
-	@echo "HEADER += " > ./Sources/Config/Header.mk
-	@find Includes -name '*.h' | sed 's/^/HEADER += /' >> ./Sources/Config/Header.mk
-	@find Libft -name '*.h' | sed 's/^/HEADER += /' >> ./Sources/Config/Header.mk
-	@find Mlx -name '*.h' | sed 's/^/HEADER += /' >> ./Sources/Config/Header.mk
+	@echo "SRCS += " > ./Config/Sources.mk
+	@find Sources -name '*.c' | sed 's/^/SRCS += /' >> ./Config/Sources.mk
+	@echo "HEADER += " > ./Config/Header.mk
+	@find Includes -name '*.h' | sed 's/^/HEADER += /' >> ./Config/Header.mk
+	@find Libft -name '*.h' | sed 's/^/HEADER += /' >> ./Config/Header.mk
+	@find Mlx -name '*.h' | sed 's/^/HEADER += /' >> ./Config/Header.mk
 
 #################################################################################
 #									Clena & Compilation							#
