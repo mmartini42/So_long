@@ -6,14 +6,14 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 16:30:54 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/10 18:49:18 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/11 21:16:22 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SOLONG_FUNCTION_H
 # define SOLONG_FUNCTION_H
 
-#include "Solong.h"
+# include "Solong.h"
 
 /* CLOSE */
 int		so_esc(int keycode, t_game *game);
@@ -23,12 +23,10 @@ int		so_redcross(t_game *game);
 int		so_press(int keycode, t_game *game);
 int		so_realese(int keycode, t_game *game);
 
-
 void	so_move(t_game *game);
 
 /* INIT */
 void	so_init(t_game *game);
-
 
 /* PARSING */
 bool	so_parsing(t_game *game, char *path_map);
@@ -44,7 +42,6 @@ void	so_get_exit(t_game *game);
 void	so_check_pos(t_game *game);
 void	so_check_last_line(t_game *game);
 
-
 /* CAMERA */
 int		get_render_x(t_game *game, float x);
 int		get_render_y(t_game *game, float y);
@@ -54,7 +51,6 @@ void	so_get_right(t_game *game);
 void	so_get_left(t_game *game);
 void	so_get_down(t_game *game);
 void	so_get_up(t_game *game);
-
 
 /* ERRORS */
 bool	so_parsing_errors(t_game *game, int status);

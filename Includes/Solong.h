@@ -6,12 +6,12 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:33:03 by mathmart          #+#    #+#             */
-/*   Updated: 2021/12/06 17:22:05 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/11 21:02:53 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SOLONG_H
+# define SOLONG_H
 
 # include <stdbool.h>
 # include "../Libft/libft.h"

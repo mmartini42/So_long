@@ -6,7 +6,7 @@
 /*   By: mathmart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 11:42:09 by lduplain          #+#    #+#             */
-/*   Updated: 2021/11/29 15:21:22 by mathmart         ###   ########.fr       */
+/*   Updated: 2021/12/11 21:17:15 by mathmart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 **	START CUSTOM INCLUDES
 */
 
-#include "Solong.h"
+# include "Solong.h"
 
 /*
 **	END CUSTOM INCLUDES
@@ -99,10 +99,10 @@ void			bettermlx_pixel_put(t_window *window, \
 **	Put image in window window.
 **	./bettermlx/display/bettermlx_put_image.c
 */
-void	bettermlx_put_image(t_window *window, \
-			t_image *image, \
-			int x, \
-			int y);
+void			bettermlx_put_image(t_window *window, \
+					t_image *image, \
+					int x, \
+					int y);
 
 /*
 **	Draw a line
